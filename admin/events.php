@@ -1,0 +1,4 @@
+<?php require __DIR__.'/_header.php';$rows=db()->query('SELECT * FROM event_registrations ORDER BY created_at DESC')->fetchAll();?>
+<div class="admin-heading"><div><span class="eyebrow">EVENTS</span><h1>Event registrations</h1><p>Review submitted event and programme registrations.</p></div></div>
+<div class="table-wrap"><table><thead><tr><th>Event / participant</th><th>Contact</th><th>Organisation</th><th>Mode / date</th></tr></thead><tbody><?php foreach($rows as $r):?><tr><td><strong><?=e($r['event_name'])?></strong><br><?=e($r['full_name'])?></td><td><?=e($r['email'])?><br><?=e($r['phone'])?></td><td><?=e($r['organisation'])?></td><td><?=e($r['attendance_mode'])?><br><?=e($r['created_at'])?></td></tr><?php endforeach;?></tbody></table></div>
+<?php require __DIR__.'/_footer.php'; ?>

@@ -1,0 +1,14 @@
+﻿.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+Thumbs.db
+vendor/
+node_modules/
+
+# Exclude duplicate project and backup
+/ma_innovation_hub/
+/ma_innovation_hub_updated.zip
+
+# Protect database configuration

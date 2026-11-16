@@ -1,0 +1,4 @@
+<?php require __DIR__.'/_header.php';$rows=db()->query('SELECT * FROM members ORDER BY created_at DESC')->fetchAll();?>
+<div class="admin-heading"><div><span class="eyebrow">COMMUNITY</span><h1>Membership registrations</h1><p>Review people who have submitted the membership form.</p></div></div>
+<div class="table-wrap"><table><thead><tr><th>Name / contact</th><th>Location</th><th>Category</th><th>Date</th></tr></thead><tbody><?php foreach($rows as $r):?><tr><td><strong><?=e($r['full_name'])?></strong><br><?=e($r['email'])?><br><?=e($r['phone'])?></td><td><?=e($r['lga'])?> <?=e($r['state'])?></td><td><?=e($r['category'])?></td><td><?=e($r['created_at'])?></td></tr><?php endforeach;?></tbody></table></div>
+<?php require __DIR__.'/_footer.php'; ?>
